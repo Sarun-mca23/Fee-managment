@@ -1,0 +1,63 @@
+<head>
+    <link rel="stylesheet" href="path/to/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="style.css">  
+  </head>
+  
+  <%- include('partials/header') %>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">RVS Fee Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/user">Student Portal</a>
+        <a class="nav-item nav-link" href="/cashier">Cashier Portal</a>
+        <a class="nav-item nav-link" href="/admin">Admin Portal</a>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="jumbotron centered" id="home">
+    <div class="container">
+      <i class="fas fa-home" id="homeicon" style="font-size: 6em;"></i>
+      <h1 class="display-3"> Fee Management System</h1>
+      <hr>
+    </div>
+  </div>
+  
+  <!-- Admin Login Form -->
+  <div class="container">
+    <h2>Admin Login</h2>
+    <form>
+      <div class="form-group">
+        <label for="adminUsername">Username:</label>
+        <input type="text" class="form-control" id="adminUsername" name="adminUsername">
+      </div>
+      <div class="form-group">
+        <label for="adminPassword">Password:</label>
+        <input type="password" class="form-control" id="adminPassword" name="adminPassword">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+  
+  <!-- Admin Registration Form -->
+  <div class="container">
+    <h2>Admin Registration</h2>
+    <form>
+      <div class="form-group">
+        <label for="adminRegUsername">Username:</label>
+        <input type="text" class="form-control" id="adminRegUsername" name="adminRegUsername">
+      </div>
+      <div class="form-group">
+        <label for="adminRegPassword">Password:</label>
+        <input type="password" class="form-control" id="adminRegPassword" name="adminRegPassword">
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+  
+  <%- include('partials/footer') %>
+  

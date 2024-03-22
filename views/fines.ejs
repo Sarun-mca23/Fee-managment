@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(185, 178, 191);
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #151010;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #075299;
+        }
+        .no-fines {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+  <h1>All Students Payment</h1>
+  <% if (fines.length > 0) { %>
+      <table>
+          <thead>
+              <tr>
+                  <th>Student Name</th>
+                  <th>Registration Number</th>
+                  <th>Email</th>
+                  <th>Course</th>
+                  <th>Fine Name</th>
+                  <th>Fine Amount</th>
+                  <th>Action</th> <!-- New column for the delete button -->
+              </tr>
+          </thead>
+          <tbody>
+              <% fines.forEach(function(fine) { %>
+                  <tr>
+                      <td><%= fine.studentname %></td>
+                      <td><%= fine.regno %></td>
+                      <td><%= fine.email %></td>
+                      <td><%= fine.course %></td>
+                      <td><%= fine.fineName %></td>
+                      <td>Rs. <%= fine.amount %></td>
+                      <td>
+                          <form action="/deleteFine/<%= fine._id %>" method="post"> <!-- Form for delete button -->
+                              <button type="submit">Delete</button> <!-- Delete button -->
+                          </form>
+                      </td>
+                  </tr>
+              <% }); %>
+          </tbody>
+      </table>
+  <% } else { %>
+      <p class="no-fines">No fines found.</p>
+  <% } %>
+</body>
+</html>

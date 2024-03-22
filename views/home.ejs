@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="path/to/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="style.css">  
+</head>
+
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">RVS Fee Management System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/user">Student Portal</a>
+      <a class="nav-item nav-link" href="/cashier">Cashier Portal</a>
+      <!-- Add the Admin link here -->
+      <a class="nav-item nav-link" href="./adminlore.ejs">Admin Portal</a>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron centered" id="home">
+  <div class="container">
+    <i class="fas fa-home" id="homeicon" style="font-size: 6em;"></i>
+    <h1 class="display-3"> Fee Management System</h1>
+    <hr>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

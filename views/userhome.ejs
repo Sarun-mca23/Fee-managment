@@ -1,0 +1,41 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center" style="background-color: #FB8DA0">
+  <div class="container">
+    < <i class="material-icons">person</i>
+
+    <h1 class="display-3">Welcome User</h1>
+    <p>Check the payment details and edit your profile, see the fine amount</p>
+    <hr>
+    <a class="btn btn-info btn-lg show-data" href="#" role="button">Show</a>
+    <a class="btn btn-primary btn-lg" href="/" role="button">Log Out</a>
+  </div>
+</div>
+
+<div id="data-container" class="container">
+  <!-- Data will be displayed here -->
+</div>
+
+<%- include('partials/footer') %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.show-data').click(function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: '/fines', // Endpoint to fetch particular data
+        type: 'GET',
+        success: function(data) {
+          $('#data-container').html(data); // Update DOM with fetched data
+        },
+        error: function(err) {
+          console.error('Error fetching data:', err);
+        }
+      });
+    });
+  });
+</script>
